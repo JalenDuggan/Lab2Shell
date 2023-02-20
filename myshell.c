@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 		}
 		
 		// clear screen
-		else if (strcmp(command, "clear") == 0){
+		else if (strcmp(command, "clr") == 0){
 			clear_screen();
 		}
 
