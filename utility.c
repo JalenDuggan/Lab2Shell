@@ -69,7 +69,7 @@ extern void display_help(void){
     printf("environ\t\t\t Lists all the environment strings..\n");
     printf("echo <comment>\t\t Displays comment on the command line followed by a newline.\n");
 	printf("cd <path>\t\t Changes the working directory to the specified path.\n");
-    printf("clear\t\t\t Clears the screen.\n");
+    printf("clr\t\t\t Clears the screen.\n");
     printf("pause\t\t\t Pauses operation of the shell until the ENTER key is hit.\n");
     printf("quit\t\t\t Quits the shell.\n\n\n");
     
