@@ -64,7 +64,6 @@ int main(int argc, char *argv[])
 		
         // cd command changes directory
         if (strcmp(command, "cd") == 0){
-            // your code here
 			change_dir(pwd, tokens[1]);
 			strcpy(environ[0], "PWD: ");
 			strcat(environ[0], pwd);
