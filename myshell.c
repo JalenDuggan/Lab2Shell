@@ -103,7 +103,6 @@ int main(int argc, char *argv[])
 		
 		// run the echo command
 		else if (strcmp(command, "echo") == 0){
-			printf("%s> ", pwd);
 			for (int i = 1; i < token_count; i++){
 				printf("%s ", tokens[i]);
 			}
