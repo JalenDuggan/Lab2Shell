@@ -79,6 +79,11 @@ int main(int argc, char *argv[])
         }
 
         // other commands here...
+	    
+	    	// enter
+		else if (strcmp(command, "") == 0){
+			printf("");
+		}
 		
 		// clear screen
 		else if (strcmp(command, "clear") == 0){
