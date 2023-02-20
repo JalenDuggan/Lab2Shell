@@ -1,10 +1,3 @@
-/*
- * MyShell Project for SOFE 3950U / CSCI 3020U: Operating Systems
- *
- * Copyright (C) 2017, <GROUP MEMBERS>
- * All rights reserved.
- * 
- */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -13,10 +6,9 @@
 #include <string.h>
 #include "myshell.h" 
 
-// Define your utility functions here, these will most likely be functions that you call
-// in your myshell.c source file
+// utility of functions defined here
 
-// string tokenizer functions
+// string tokenizer function
 extern int string_tokenizer(char* str, char tokens[][BUFFER_LEN]){
 	const char delimiter[2] = " ";
 	int tokens_count = 0;
@@ -29,12 +21,12 @@ extern int string_tokenizer(char* str, char tokens[][BUFFER_LEN]){
 	return tokens_count;
 }
 
-// returns current directory
+// returns the current directory user is in 
 extern void get_currentDir(char* pwd){
 	getcwd(pwd, BUFFER_LEN);
 }
 
-// changes the directory
+// changes the directory of terminal 
 extern void change_dir(char* pwd, char* path){
 	int changed = chdir(path);
 	if (strcmp(path,"") != 0){
@@ -47,7 +39,7 @@ extern void change_dir(char* pwd, char* path){
 	}
 }
 
-// clears the screen
+// clears screen
 extern void clear_screen(void){
 	system("cls||clear");
 }
@@ -61,7 +53,7 @@ extern void pause_shell(void){
 	}
 }
 
-// displays help menu
+// displays all commands within the shell using "help" 
 extern void display_help(void){
     printf("\nList of available commands:\n\n");
     printf("help\t\t\t Lists the help menu.\n");
@@ -75,7 +67,7 @@ extern void display_help(void){
     
 }
 
-// displays the directory
+// displays the directory user is in or calls
 extern void display_dir(char* path){
 	struct dirent *de; 
 	DIR *dr = NULL;
@@ -94,7 +86,7 @@ extern void display_dir(char* path){
     closedir(dr);     
 }
 
-// displays the environment variables
+// displays environment variables   the pwd and the directory the shell is running in
 extern void display_environs(char env[][BUFFER_LEN]){
 	printf("%s\n%s\n", env[0], env[1]);
 }
