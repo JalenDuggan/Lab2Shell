@@ -32,6 +32,12 @@ extern void pause_shell(void);
 // displays the directory
 extern void display_dir(char* path);
 
+// displays valid commands
+extern void display_help(void);
+
+// displays valid commands
+extern int wait();
+
 // displays the environment variables
 extern void display_environs(char env[][BUFFER_LEN]);
 
