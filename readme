@@ -3,13 +3,13 @@
 The following are the commands for the shell: <br>
 
 **cd  <directory>**  This command (which stands for "change directory") is used to change the current working directory in the shell. This means that any commands or scripts that are executed will act on files and directories within the newly specified directory. <br>
-**clr:**  command is used to clear the terminal screen of any previously executed commands, output or text, giving a clean slate to work on. <br>
-**dir <directory>** Lists the contents of a directory. <br>
-**environ** List all the environment strings. <br>
-**echo <comment>** This command is used to display a message or a value on the terminal. <br>
-**help** Displays all valid functionality of the shell. <br>
-**pause:** Pauses operation of the shell until the "ENTER" key is hit <br>
-**quit:** Quits the shell <br>
+**clr**              command is used to clear the terminal screen of any previously executed commands, output or text, giving a clean slate to work on. <br>
+**dir <directory>**  Lists the contents of a directory. <br>
+**environ**          List all the environment strings. <br>
+**echo <comment>**   This command is used to display a message or a value on the terminal. <br>
+**help**             Displays all valid functionality of the shell. <br>
+**pause:**           Pauses operation of the shell until the "ENTER" key is hit <br>
+**quit:**            Quits the shell <br>
 
 **Environment Concepts**<br><br>
 When the shell executes a program, it creates an environment for the new process that includes various pieces of information such as environment variables, file descriptors, and other settings. The statement specifies that the environment created for these child processes should contain an entry that sets the 'parent' environment variable to the pathname of the 'myshell' executable. This environment variable can then be used by the child process to access information about the parent shell.<br>
