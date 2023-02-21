@@ -12,6 +12,12 @@
 int main(int argc, char *argv[])
 {
 
+
+  // Input buffer and and commands
+	pid_t child_pid, wpid;
+	int status = 0;
+
+
 	char environ[2][BUFFER_LEN] = {0};
 	char pwd[BUFFER_LEN] = {0};
 	char myshell[BUFFER_LEN] = {0};
@@ -61,6 +67,7 @@ int main(int argc, char *argv[])
 		
 		token_count = string_tokenizer(buffer, tokens);
 		strcpy(command, tokens[0]);
+
 		
         // cd command changes directory
         if (strcmp(command, "cd") == 0){
@@ -98,8 +105,79 @@ int main(int argc, char *argv[])
 		else if (strcmp(command, "echo") == 0){
 			// printf("%s> ");
 			for (int i = 1; i < token_count; i++){
-				printf("%s ", tokens[i]);
+
+
+		if ((child_pid = fork()) == 0)
+			{
+				
+			if (strcmp(command, "cd") == 0){
+							// your code here
+				change_dir(pwd, tokens[1]);
+				strcpy(environ[0], "PWD: ");
+				strcat(environ[0], pwd);
+					}
+
+					// other commands here...
+				
+					// enter
+			else if (strcmp(command, "") == 0){
+				
 			}
+			
+			// clear screen
+			else if (strcmp(command, "clr") == 0){
+				
+				clear_screen();
+				
+			}
+
+			// display help
+			else if (strcmp(command, "help") == 0){
+				display_help();
+				
+			}	
+			
+			// pause the shell
+			else if (strcmp(command, "pause") == 0){
+				
+				pause_shell();
+				
+			}	
+			
+			// lists the contents of the specified directory
+			else if (strcmp(command, "dir") == 0){
+				if ((child_pid = fork()) == 0)
+				
+				display_dir(tokens[1]);
+				printf("\n");
+				
+			}
+			
+			// run the echo command
+			else if (strcmp(command, "echo") == 0){
+				if ((child_pid = fork()) == 0)
+				
+				for (int i = 1; i < token_count; i++){
+
+				printf("%s ", tokens[i]);
+				}
+				printf("\n");
+				
+			}
+			
+			// display environment variables
+			else if (strcmp(command, "environ") == 0){
+				
+				display_environs(environ);
+				
+			}
+			
+			// quit command -- exit the shell
+			else if (strcmp(tokens[0], "quit") == 0 || strcmp(tokens[0], "exit") == 0){
+				printf("Bye!\n");
+				return EXIT_SUCCESS;
+			}
+
 			printf("\n");
 		}
 		
@@ -119,6 +197,18 @@ int main(int argc, char *argv[])
 			printf("%s> ", pwd);
             printf("Unsupported command, use help to display the manual\n");
         }
+
+
+					// Unsupported command
+			else{
+				printf("%s> ", pwd);
+				printf("Unsupported command, use help to display the manual\n");
+			}
+		}
+			while ((wpid = wait(&status)) > 0);
+    // Check the command and execute the operations for each command
+    // cd command -- change the current directory
+
 		
 		memset(buffer, 0, sizeof buffer);
 		memset(command, 0, sizeof command);

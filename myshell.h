@@ -20,7 +20,17 @@ extern void pause_shell(void);
 // displays the path of the directory
 extern void display_dir(char* path);
 
+
 // displays the PWD and the directory the shell program is being run in
+
+// displays valid commands
+extern void display_help(void);
+
+// displays valid commands
+extern int wait();
+
+// displays the environment variables
+
 extern void display_environs(char env[][BUFFER_LEN]);
 
 #endif 
