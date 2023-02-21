@@ -1,36 +1,27 @@
-/*
- * MyShell Project for SOFE 3950U / CSCI 3020U: Operating Systems
- *
- * Copyright (C) 2017, <GROUP MEMBERS>
- * All rights reserved.
- * 
- */
 #ifndef UTILITY_H_
 #define UTILITY_H_
 
 #define BUFFER_LEN 1024 
-
-// Include your relevant functions declarations here they must start with the
-// extern keyword such as in the following example:
-// extern void display_help(void);
-
-// string tokenizer functions
+// string tokenizer 
 extern int string_tokenizer(char* str, char tokens[][BUFFER_LEN]);
 
-// returns current directory
+// returns current working directory
 extern void get_currentDir(char* pwd);
 
-// changes the directory
+// changes the directory to the path given 
 extern void change_dir(char* pwd, char* path);
 
-// clears the screen
+// clears screen
 extern void clear_screen(void);
 
-// pauses the shell
+// pauses the shell until user presses enter key
 extern void pause_shell(void);
 
-// displays the directory
+// displays the path of the directory
 extern void display_dir(char* path);
+
+
+// displays the PWD and the directory the shell program is being run in
 
 // displays valid commands
 extern void display_help(void);
@@ -39,6 +30,7 @@ extern void display_help(void);
 extern int wait();
 
 // displays the environment variables
+
 extern void display_environs(char env[][BUFFER_LEN]);
 
-#endif /* UTILITY_H_ */
+#endif 
