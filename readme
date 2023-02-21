@@ -1,5 +1,9 @@
 ### Simple Shell Project<br>
 
+Jalen Duggan - 100713924
+Mohammed Khan - 100756901
+Rayan Pasha - 100704599
+
 The following are the commands for the shell: <br>
 
 **cd  <directory>**  This command (which stands for "change directory") is used to change the current working directory in the shell. This means that any commands or scripts that are executed will act on files and directories within the newly specified directory. <br>

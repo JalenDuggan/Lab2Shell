@@ -1,3 +1,9 @@
+# GROUP 8
+
+# Jalen Duggan - 100713924
+# Mohammed Khan - 100756901
+# Rayan Pasha - 100704599
+
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -g
 LFLAGS = 

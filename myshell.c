@@ -62,8 +62,7 @@ int main(int argc, char *argv[])
 		token_count = string_tokenizer(buffer, tokens);
 		strcpy(command, tokens[0]);
 
-		if ((child_pid = fork()) == 0)
-			{
+		if ((child_pid = fork()) == 0){
 			// cd command changes directory
 			if (strcmp(command, "cd") == 0){
 							// your code here
@@ -136,7 +135,7 @@ int main(int argc, char *argv[])
 				printf("%s> ", pwd);
 				printf("Unsupported command, type 'help'\n");
 			}
-		}
+	}
 			while ((wpid = wait(&status)) > 0);
     // Check the command and execute the operations for each command
     // cd command -- change the current directory
