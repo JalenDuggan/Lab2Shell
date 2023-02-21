@@ -16,7 +16,7 @@ When the shell executes a program, it creates an environment for the new process
 
 
 **I/O Redirection**<br><br>
-The shell should support the command line syntax of programname arg1 arg2 < inputfile > outputfile, which runs the programname command with the specified arguments (arg1 and arg2), and replaces the stdin and stdout streams with the contents of inputfile and outputfile, respectively. Furthermore, the shell supports output redirection for certain built-in commands, namely dir, environ, echo, and help. This means that these commands can be run with their output redirected to a file using the same > and >> redirection operators as described in the previous answer.<br>
+The shell supports the command line syntax of programname arg1 arg2 < inputfile > outputfile, which runs the programname command with the specified arguments (arg1 and arg2), and replaces the stdin and stdout streams with the contents of inputfile and outputfile, respectively. Furthermore, the shell supports output redirection for certain built-in commands, namely dir, environ, echo, and help. This means that these commands can be run with their output redirected to a file using the same > and >> redirection operators as described in the previous answer.<br>
 
 **Background Execution**<br><br>
 Background execution allows you to start a program and then continue using the shell without waiting for the program to finish.
